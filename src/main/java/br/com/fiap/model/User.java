@@ -1,5 +1,7 @@
 package br.com.fiap.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +13,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome = "Daniel yamashita";
+	private LocalDate dtNascimento;
 	private String email = "daniel@gmail.com";
 	private String senha;
 	
@@ -37,10 +40,20 @@ public class User {
 		this.senha = senha;
 	}
 
+	public LocalDate getDtNascimento() {
+		return dtNascimento;
+	}
+
+	public void setDtNascimento(LocalDate dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
+
 	@Override
 	public String toString() {
-		return "User [nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
+		return "User [id=" + id + ", nome=" + nome + ", dtNascimento=" + dtNascimento + ", email=" + email + ", senha="
+				+ senha + "]";
 	}
+
 	
 	
 	
